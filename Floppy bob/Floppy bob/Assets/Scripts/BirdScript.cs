@@ -14,6 +14,7 @@ public class BirdScript : MonoBehaviour
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        backgroundMusic.Play();
     }
 
     // Update is called once per frame
@@ -26,6 +27,9 @@ public class BirdScript : MonoBehaviour
         if(transform.position.y < -17){
             logic.gameOver();
             birdIsAlive = false;
+        }
+        if (birdIsAlive == false){
+            backgroundMusic.Stop();
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {
