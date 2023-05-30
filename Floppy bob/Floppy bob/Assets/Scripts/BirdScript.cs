@@ -5,6 +5,7 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
+    public AudioSource jumpSound;
     public float flapStrength;
     public LogicScript logic;
     public bool birdIsAlive = true;
@@ -19,6 +20,7 @@ public class BirdScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive == true) {
             myRigidbody.velocity = Vector2.up * flapStrength;
+            jumpSound.Play();
         }
         if(transform.position.y < -17){
             logic.gameOver();
