@@ -20,6 +20,10 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive == true) {
             myRigidbody.velocity = Vector2.up * flapStrength;
         }
+        if(transform.position.y < -17){
+            logic.gameOver();
+            birdIsAlive = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D other) {
         logic.gameOver();
