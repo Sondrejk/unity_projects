@@ -6,6 +6,7 @@ public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
     public AudioSource jumpSound;
+    public AudioSource backgroundMusic;
     public float flapStrength;
     public LogicScript logic;
     public bool birdIsAlive = true;
